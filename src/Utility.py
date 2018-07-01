@@ -48,25 +48,25 @@ class Message:
         exit(0)
 
 
-    def excludeWarning(self, line, distributorName):
-        print(colored("Error: " + str(line), 'red'))
-        print(colored("Description: " + distributorName + " EXCLUDE permission doesn't work, as this region or superset of this region is not included in the first place :( ", 'blue'))
+    def duplicateDistributor(self, line, distributorName):
+        print(colored("\nError: " + str(line) , 'red'))
+        print(colored("Description: Duplicate Distributor name. " + str(distributorName) + " already exists", 'blue'))
         exit(0)
 
 
+    def excludeWarning(self, line, distributorName):
+        print(colored("Error: " + str(line), 'red'))
+        print(colored("Description: " + distributorName + " EXCLUDE permission doesn't work, as this region or superset of this region is not included in the first place :( ", 'blue'))
+        
+
     def includeWarning(self, line, distributorName):
-        print(colored("Warning: " + str(line), 'yellow'))
+        print(colored("Error: " + str(line), 'red'))
         print(colored("Description: " + str(distributorName) + " can't include this region", 'blue')) 
 
 
     def includeExcludeSuccess(self, line, distributorName):
         print(colored(str(line) + " included to "+ str(distributorName) + "'s permission list", 'green'))
           
-
-    def duplicateDistributor(self, distributorName):
-        print(colored("\nError: Duplicate Distributor name. " + str(distributorName) + " already exists", 'red'))
-        exit(0)       
-
 
 
 class InputFormatter: 

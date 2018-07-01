@@ -71,9 +71,9 @@ class Permission:
             isPresentInExclude = distributorNode.checkExcludes(distributorNode, startID, endID)
 
             if(isPresentInInclude and not(isPresentInExclude)):
-                print(colored("Yes, " + str(distributorName) + " doesn't have permission to access this " + str(place) +  " region", 'green'))
+                print(colored("Yes, " + str(distributorName) + " doesn't have permission to access " + str(place) +  " region", 'green'))
             else:
-                print(colored("No, " + str(distributorName) + " doesn't have permission to access this " + str(place) +  " region", 'blue'))
+                print(colored("No, " + str(distributorName) + " doesn't have permission to access " + str(place) +  " region", 'blue'))
 
 
     def addPermissions(self, lines, startIndex, distributorNode, parentDistributorNode):
@@ -112,7 +112,7 @@ class Permission:
             dist2 = dist2.strip()
 
             if(dist1 in distributors):
-                self.message.duplicateDistributor(dist1)
+                self.message.duplicateDistributor(lines[startIndex], dist1)
 
             print("\nAdd Permissions for {}".format(dist1))
             
@@ -159,10 +159,16 @@ class Application:
         print("\n================================OUTPUT================================")
         
         print("\n\t\t\tADD PERMISSIONS")
-        self.permission.processPermissions(lines, 1, checkPermissionIndex - 1, self.distributors)
+        index = 1
+        while(lines[index] == ""):
+            index += 1
+        self.permission.processPermissions(lines, index, checkPermissionIndex - 1, self.distributors)
         
         print("\n\n\t\t\tCHECK PERMISSIONS")
-        self.permission.checkPermission(lines, checkPermissionIndex + 1, len(lines) - 1, self.distributors)    
+        index = checkPermissionIndex + 1
+        while(lines[index] == ""):
+            index += 1
+        self.permission.checkPermission(lines, index, len(lines) - 1, self.distributors)    
 
 
 app = Application()

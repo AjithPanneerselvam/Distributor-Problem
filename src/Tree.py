@@ -28,9 +28,10 @@ class BinarySearchTree:
             newNode = BSTNode(startID, endID)
             return newNode
         
-        if(startID < root.startID):
+        mid = int((root.startID + root.endID) // 2)
+        if(startID < mid):
             root.left = self.insertNode(root.left, startID, endID)
-        elif(startID > root.startID):
+        else:
             root.right = self.insertNode(root.right, startID, endID)
         
         return root
@@ -40,10 +41,12 @@ class BinarySearchTree:
         if(root == None):
             return False 
         if(root.startID <= startID and root.endID >= endID):
-            return True 
-        if(root.startID > startID):
+            return True
+
+        mid = int((root.startID + root.endID) // 2)
+        if(startID < mid):
             return self.isInRange(root.left, startID, endID)
-        if(root.startID < startID):
+        else:
             return self.isInRange(root.right, startID, endID) 
 
 
@@ -148,3 +151,17 @@ class WorldTree:
                     self.insertNode(country, province, city)
                 
         self.assignID(self.world)
+
+
+# bst = BinarySearchTree()
+# bst.insertNode(bst.root, 2, 1000)
+# bst.insertNode(bst.root, 4, 81)
+# bst.insertNode(bst.root, 501, 600)
+# bst.insertNode(bst.root, 549, 549)
+# bst.insertNode(bst.root, 550, 550)
+# bst.printTree(bst.root)
+# print(bst.isInRange(bst.root, 550, 550))
+# print(bst.isInRange(bst.root, 5, 80))
+# print(bst.isInRange(bst.root, 1, 100))
+
+
