@@ -7,7 +7,6 @@ The problem statement can be viewed [here](https://github.com/realimage/challeng
 - [Program Execution](#Program-Execution?)
 - [Operations Supported](#Operations-Supported)
 - [Input Format](#Input-Format) 
-- [Output Format](#Output-Format)
 - [Algorithm](#Algorithm)
 - [Algorithm Analysis](#Algorithm-Analysis) 
 
@@ -113,10 +112,6 @@ I have made some changes to the input format, which are  as follows:
 - Simplified the command `PERMISSIONS D3 < D2 < D1` to `PERMISSIONS D3 < D2`, as my program understands that D2 is a subset of D1 from the previous commands.
 
 
-## **Output Format**
-
-Output will be displayed in the terminal along with the input, when app.py is executed. 
-
 ## **Algorithm**
 
 This section will talk about few areas of the algorithm which dominates the space and running time of the program.
@@ -156,8 +151,6 @@ This section will talk about few areas of the algorithm which dominates the spac
     ![includeBST](Images/IncludeBST.png) 
     
     **The above diagram is created using draw.io**
-
-    <br>
 
     The nodes will be inserted based on the following condition: 
     - If the startID of the node to be inserted is less than the mid value of the current node's start and end ID, then the node will be inserted to its left.
