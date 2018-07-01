@@ -124,12 +124,10 @@ This section will talk about few areas of the algorithm which dominates the spac
 - Places of the world recorded in cities.csv are stored in a tree data  structure. I will reference that data structure hereafter as `World Tree`. Each place will have two ID's - startID and endID. The ID's are assigned by following a pattern. The pattern can be viewed in the following diagram.
     
     <br>
-    <br>
-    <br>
 
     ![WorldTree](Images/WorldTree.png)
-                    
-    <center> The World Tree diagram is created using draw.io </center>
+             
+    **The World Tree diagram is created using draw.io**
 
 
     It can be evidently seen that the child node's startID and endID is always within the range of the parent node's startID and endID. This ID scheme helps us to find whether a province Y is within a country X or a city Z in within a province Y easily. 
@@ -154,11 +152,10 @@ This section will talk about few areas of the algorithm which dominates the spac
     The INCLUDE Permissions of D1 is stored in the tree as in the below diagram. 
 
     <br>
-    <br>
 
     ![includeBST](Images/IncludeBST.png) 
     
-    <center> The above diagram is created using draw.io </center>
+    **The above diagram is created using draw.io**
 
     <br>
 
