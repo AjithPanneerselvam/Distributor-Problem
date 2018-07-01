@@ -9,6 +9,7 @@ The problem statement can be viewed [here](https://github.com/realimage/challeng
 - [Input Format](#Input-Format) 
 - [Algorithm](#Algorithm)
 - [Algorithm Analysis](#Algorithm-Analysis) 
+- [Output Screenshots](#Output-Screenshots)
 
 ## **Requirements**
 
@@ -20,7 +21,7 @@ The problem statement can be viewed [here](https://github.com/realimage/challeng
     
     It is used to get the output in color text for easy understanding. If you don't have termcolor in your system's python modules, you can install it with the help of this command `pip install termcolor` 
 
-    *`If the program is being executed on a UNIX-based system, color text will work fine. In windows-based system, the text may not be colored, instead a color code will be displayed.`*
+    *`If the program is being executed on a UNIX-based system(Linux/Mac OS X), color text will work fine. In windows-based system, the text may not be colored, instead a color code will be displayed.`*
 
 ## **Project Structure**
 The project files are laid out in a straightforward manner as there are only few program files. 
@@ -180,7 +181,7 @@ This section will talk about few areas of the algorithm which dominates the spac
     children: Dictionary()
     ```
 
-    **Argument**: `children` can be made List(), but it dominates the running-time in finding out the desired node. To put it in numbers, there are 195 countries in the world, so in the worst-case, it will take 195 iterations to find out the desired country node. Likewise, the same can be applied down the hierarchy for provinces in a country and cities in a province. I preferred to relax the space and give way for better running-time. My opinion can be reversed based on the requirement of the application. 
+    **Argument**: `children` can be made List(), but it dominates the running-time in finding out the desired node. To put it in numbers, there are 195 countries in the world, so in the worst-case, it will take 195 iterations to find out the desired country node. Likewise, the same can be applied down the hierarchy for provinces in a country and cities in a province. I preferred to relax the space and give way for better running-time. My opinion can be reversed based on the requirement of the application.
 
 
 
@@ -207,15 +208,26 @@ The INCLUDE/EXCLUDE permissions for a distributor is stored in BST for a reason.
     
     Again, I leave this argument open, because I can't claim which one is the best without knowing the exact requirements and resources of the application.
 
+    **Improvements to be considered**: It is not guarenteed that the tree will always give O(logn) for insert and search operation, as there is a chance for the tree to be skewed, which will give O(n) for insert and search operation. In order to get rid of this, self-balancing Binary Search Trees like AVL/Red-black Tree can be used, which guarentees O(logn) for all the operations.
+
 **Analysis**
 
 **Time Complexity**
-- Insertion - O(logn)
-- Search - O(log n)
+- Insertion - Omega(logn) - Average case
+- Search - Omega(logn) - Average case
+
+    *Omega notation is followed, because there is a chance for O(n) when the tree is skewed.*
 
 **Space Complexity - O(n)**
 
-Say, k INCLUDE permissions are needed to be assigned to Distributor Y by Distributor X, then it will take O(k logn) time for this operation, where k is the number of permissions to be added to Y's permission list and n is the number of INCLUDE permissions of X.  
+Say, k INCLUDE permissions are needed to be assigned to Distributor Y by Distributor X, then it will take O(k logn) time for this operation, where k is the number of permissions to be added to Y's permission list and n is the number of INCLUDE permissions of X. 
+
+## Output Screenshots
+
+![output1](Images/output1.png)
+
+![output2](Images/output2.png)
+    
 
 
 
