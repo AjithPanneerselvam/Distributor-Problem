@@ -151,17 +151,3 @@ class WorldTree:
                     self.insertNode(country, province, city)
                 
         self.assignID(self.world)
-
-
-# bst = BinarySearchTree()
-# bst.insertNode(bst.root, 2, 1000)
-# bst.insertNode(bst.root, 4, 81)
-# bst.insertNode(bst.root, 501, 600)
-# bst.insertNode(bst.root, 549, 549)
-# bst.insertNode(bst.root, 550, 550)
-# bst.printTree(bst.root)
-# print(bst.isInRange(bst.root, 550, 550))
-# print(bst.isInRange(bst.root, 5, 80))
-# print(bst.isInRange(bst.root, 1, 100))
-
-
