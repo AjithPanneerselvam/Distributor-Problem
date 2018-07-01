@@ -39,6 +39,7 @@ The project files are laid out in a straightforward manner as there are only few
             -- output1.png
             -- output2.png
             -- WorldTree.png
+            -- IncludeBST.png
             
 
 
@@ -122,7 +123,7 @@ This section will talk about few areas of the algorithm which dominates the spac
 
     ![WorldTree](Images/WorldTree.png)
              
-    **The World Tree diagram is created using draw.io**
+    *The World Tree diagram is created using draw.io*
 
 
     It can be evidently seen that the child node's startID and endID is always within the range of the parent node's startID and endID. This ID scheme helps us to find whether a province Y is within a country X or a city Z in within a province Y easily. 
@@ -150,7 +151,7 @@ This section will talk about few areas of the algorithm which dominates the spac
 
     ![includeBST](Images/IncludeBST.png) 
     
-    **The above diagram is created using draw.io**
+    *The above diagram is created using draw.io*
 
     The nodes will be inserted based on the following condition: 
     - If the startID of the node to be inserted is less than the mid value of the current node's start and end ID, then the node will be inserted to its left.
