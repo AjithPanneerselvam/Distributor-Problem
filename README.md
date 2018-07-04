@@ -213,8 +213,8 @@ The INCLUDE/EXCLUDE permissions for a distributor is stored in BST for a reason.
 **Analysis**
 
 **Time Complexity**
-- Insertion - Omega(logn) - Average case
-- Search - Omega(logn) - Average case
+- Insertion - Theta(logn) - Average case
+- Search - Theta(logn) - Average case
 
     *Omega notation is followed, because there is a chance for O(n) when the tree is skewed.*
 
